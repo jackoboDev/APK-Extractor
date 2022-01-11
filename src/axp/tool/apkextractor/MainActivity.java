@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onFocusChange(View view, boolean queryTextFocused) {
 				if (!queryTextFocused && searchView.getQuery().length() < 1) {
-					getSupportActionBar().collapseActionView();
+					//getSupportActionBar().collapseActionView(); ??????
 				}
 			}
 		});
