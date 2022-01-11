@@ -37,7 +37,7 @@ jobs:
       - name: Releasing using Hub
         uses: yurakurets/action-release-debugapk@master
         env:
-          REPO_BRANCH: master
+          REPO_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.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 }}
           APK_FOLDER: android/app/build/outputs/apk/release/app-release.apk
           APP_FOLDER: android/app
