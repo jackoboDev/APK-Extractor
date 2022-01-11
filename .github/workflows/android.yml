@@ -34,11 +34,10 @@ jobs:
         with:
           gradle-version: 6.5
           arguments: assembleRelease
-      - name: Releasing using Hub
-        uses: yurakurets/action-release-debugapk@master
-        env:
-          REPO_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.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 }}
-          APK_FOLDER: android/app/build/outputs/apk/release/app-release.apk
-          APP_FOLDER: android/app
-          RELEASE_TITLE: New Build
+      - name: Find all JS files and fail if found
+        uses: DovnarAlexander/github-action-file-detection@master
+        with:
+          wildcard: '*.apk'
+          exit_code_found: 1
+          exit_code_not_found: 0
+          base_path: .
