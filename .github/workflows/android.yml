@@ -27,17 +27,10 @@ jobs:
         with:
           gradle-version: 6.5
           arguments: build
-      - name: Gradle Action - Assemble
-        uses: gradle/gradle-build-action@v2.1.0
-        env:
-          CI: true
-        with:
-          gradle-version: 6.5
-          arguments: assembleRelease
       - name: Move artifacts
         run: |
           mkdir artifacts
-          mv ./build/outputs/apk/release/APK-Extractor-release-unsigned.apk ./artifacts 
+          mv ./build/outputs/apk ./artifacts 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1.0.0  
         with:
