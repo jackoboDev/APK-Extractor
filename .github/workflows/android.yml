@@ -35,7 +35,8 @@ jobs:
           gradle-version: 6.5
           arguments: assembleRelease
       - name: Releasing using Hub
-        uses: kyze8439690/action-release-releaseapk@master
+        uses: ShaunLWM/action-release-debugapk@master
         env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.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 }}
           APP_FOLDER: apkextractor
+          RELEASE_TITLE: New Build
