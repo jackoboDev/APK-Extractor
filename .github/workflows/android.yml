@@ -30,7 +30,7 @@ jobs:
       - name: Move artifacts
         run: |
           mkdir artifacts
-          mv ./build/outputs/apk ./artifacts 
+          mv ./build/outputs/apk/debug/APK-Extractor-debug.apk ./artifacts/APK-Extractor.apk 
       - name: Upload artifacts
         uses: actions/upload-artifact@v1.0.0  
         with:
