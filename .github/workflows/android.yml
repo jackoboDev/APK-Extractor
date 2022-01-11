@@ -34,10 +34,12 @@ jobs:
         with:
           gradle-version: 6.5
           arguments: assembleRelease
-      - name: Find all JS files and fail if found
-        uses: DovnarAlexander/github-action-file-detection@master
+      - name: Move artifacts
+        run: |
+          mkdir artifacts
+          move ./build/outputs/apk/release/APK-Extractor-release-unsigned.apk ./artifacts 
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v1.0.0  
         with:
-          wildcard: '*.apk'
-          exit_code_found: 1
-          exit_code_not_found: 0
-          base_path: .
+          name: Android
+          path: artifacts
