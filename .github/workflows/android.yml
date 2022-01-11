@@ -1,4 +1,4 @@
-name: Minimal Android CI Workflow
+name: Android CI Workflow
 
 on:
   push:
@@ -20,14 +20,14 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           cache: gradle
-      - name: Gradle Build Action
+      - name: Gradle Action - Build
         uses: gradle/gradle-build-action@v2.1.0
         env:
           CI: true
         with:
           gradle-version: 6.5
           arguments: build
-      - name: Gradle Build Action
+      - name: Gradle Action - Assemble
         uses: gradle/gradle-build-action@v2.1.0
         env:
           CI: true
