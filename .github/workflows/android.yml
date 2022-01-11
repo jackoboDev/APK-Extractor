@@ -27,3 +27,9 @@ jobs:
         with:
           gradle-version: 6.5
           arguments: build
+      - name: Releasing using Hub
+        uses: ShaunLWM/action-release-debugapk@master
+        env:
+         GITHUB_TOKEN: ${{ secrets.TOKEN }}
+         APP_FOLDER: app
+         RELEASE_TITLE: New Build
