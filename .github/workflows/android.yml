@@ -33,4 +33,9 @@ jobs:
           CI: true
         with:
           gradle-version: 6.5
-          arguments: assemble
+          arguments: assembleRelease
+      - name: Releasing using Hub
+        uses: kyze8439690/action-release-releaseapk@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+          APP_FOLDER: apkextractor
