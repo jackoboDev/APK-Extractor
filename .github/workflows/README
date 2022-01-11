@@ -1,0 +1,11 @@
+Note :
+
+Find the apks created
+
+- name: Find all APK files and fail if found
+  uses: DovnarAlexander/github-action-file-detection@master
+  with:
+    wildcard: '*.apk'
+    exit_code_found: 1
+    exit_code_not_found: 0
+    base_path: .
