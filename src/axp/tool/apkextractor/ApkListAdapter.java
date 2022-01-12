@@ -26,7 +26,6 @@ import java.util.concurrent.ThreadFactory;
 
 public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHolder> {
 	private ThreadFactory tFactory = new ThreadFactory() {
-		@Override
 		public Thread newThread(Runnable r) {
 			Thread t = new Thread(r);
 			t.setDaemon(true);
@@ -61,7 +60,6 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 			package_info = info;
 		}
 
-		@Override
 		public void run() {
 			cache_appName.put(package_info.packageName, (String) package_info.applicationInfo.loadLabel(packageManager));
 			handler.post(new Runnable() {
@@ -86,7 +84,6 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 			package_info = info;
 		}
 
-		@Override
 		public void run() {
 			boolean first = true;
 			do {
@@ -134,7 +131,6 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 			v.setOnClickListener(this);
 		}
 
-		@Override
 		public void onClick(View v) {
 			PackageInfo info = adapter.getItem(getAdapterPosition());
 			adapter.mActivity.doExctract(info);
@@ -162,12 +158,10 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		}
 	}
 
-	@Override
 	public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
 		return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item, viewGroup, false), this);
 	}
 
-	@Override
 	public void onBindViewHolder(ViewHolder holder, int i) {
 		PackageInfo item = list.get(i);
 		holder.setPackageName(item.packageName, search_pattern);
@@ -185,7 +179,6 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		return list.get(pos);
 	}
 
-	@Override
 	public int getItemCount() {
 		return list.size();
 	}
