@@ -5,7 +5,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
