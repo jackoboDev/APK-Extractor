@@ -20,6 +20,9 @@ android {
 	compileSdk 31
 	buildToolsVersion '32.0.0'
 
+	    aaptOptions.cruncherEnabled = false
+	    aaptOptions.useNewCruncher = false
+
 	compileOptions {
 		sourceCompatibility JavaVersion.VERSION_1_8
 		targetCompatibility JavaVersion.VERSION_1_8
