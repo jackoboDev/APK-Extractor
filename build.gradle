@@ -16,7 +16,7 @@ repositories {
 }
 
 android {
-	compileSdk 29
+	compileSdk 31
 	buildToolsVersion '32.0.0'
 
 	compileOptions {
