@@ -5,7 +5,7 @@
 	android:layout_height="match_parent"
 	tools:context="${relativePackage}.${activityClass}">
 
-	<android.support.v7.widget.Toolbar
+	<androidx.appcompat.widget.Toolbar
 		android:id="@+id/toolbar"
 		android:layout_width="match_parent"
 		android:layout_height="?attr/actionBarSize"
@@ -26,7 +26,7 @@
 	</android.support.v7.widget.Toolbar>
 
 
-	<android.support.v7.widget.RecyclerView
+	<androidx.recyclerview.widget.RecyclerView
 		android:id="@android:id/list"
 		android:layout_width="match_parent"
 		android:layout_height="match_parent"
