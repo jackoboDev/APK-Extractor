@@ -7,10 +7,10 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Build;
+//import android.os.Build;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AlertDialog;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -61,14 +61,14 @@ public class PermissionResolver {
 		"android.permission.ACCESS_SUPERUSER"
 	};
 
-	private Activity activity;
+	private final Activity activity;
 
 	public PermissionResolver(Activity a) {
 		this.activity = a;
 	}
 
 	public boolean resolve() {
-		if (Build.VERSION.SDK_INT < 23) return true;
+		//if (Build.VERSION.SDK_INT < 23) return true;
 
 		String[] unmet_permissions = getUnmetPermissions();
 		if (unmet_permissions.length < 1) return true;
@@ -80,7 +80,7 @@ public class PermissionResolver {
 
 	@SuppressLint("NewApi")
 	private String[] getUnmetPermissions() {
-		List<String> unmet_permissions = new LinkedList<String>();
+		List<String> unmet_permissions = new LinkedList<>();
 		try {
 			List<String> def  = Arrays.asList(DEFAULT_PERMISSIONS);
 			PackageInfo  info = activity.getPackageManager().getPackageInfo(activity.getPackageName(), PackageManager.GET_PERMISSIONS);

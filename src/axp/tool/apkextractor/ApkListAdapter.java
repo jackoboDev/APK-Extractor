@@ -5,7 +5,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.ForegroundColorSpan;
@@ -25,7 +25,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHolder> {
-	private ThreadFactory tFactory = new ThreadFactory() {
+	private final ThreadFactory tFactory = new ThreadFactory() {
 		@Override
 		public Thread newThread(Runnable r) {
 			Thread t = new Thread(r);
@@ -34,18 +34,18 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		}
 	};
 
-	private ArrayList<PackageInfo> list                 = new ArrayList<PackageInfo>();
-	private ArrayList<PackageInfo> list_original        = new ArrayList<PackageInfo>();
-	private ExecutorService        executorServiceNames = Executors.newFixedThreadPool(3, tFactory);
-	private ExecutorService        executorServiceIcons = Executors.newFixedThreadPool(3, tFactory);
-	private Handler                handler              = new Handler();
+	private final ArrayList<PackageInfo> list                 = new ArrayList<PackageInfo>();
+	private final ArrayList<PackageInfo> list_original        = new ArrayList<PackageInfo>();
+	private final ExecutorService        executorServiceNames = Executors.newFixedThreadPool(3, tFactory);
+	private final ExecutorService        executorServiceIcons = Executors.newFixedThreadPool(3, tFactory);
+	private final Handler                handler              = new Handler();
 	public       MainActivity   mActivity;
 	public final PackageManager packageManager;
 
 	int names_to_load = 0;
 
-	private Map<String, String>   cache_appName = Collections.synchronizedMap(new LinkedHashMap<String, String>(10, 1.5f, true));
-	private Map<String, Drawable> cache_appIcon = Collections.synchronizedMap(new LinkedHashMap<String, Drawable>(10, 1.5f, true));
+	private final Map<String, String>   cache_appName = Collections.synchronizedMap(new LinkedHashMap<String, String>(10, 1.5f, true));
+	private final Map<String, Drawable> cache_appIcon = Collections.synchronizedMap(new LinkedHashMap<String, Drawable>(10, 1.5f, true));
 
 	private String search_pattern;
 
@@ -55,7 +55,7 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 	}
 
 	class AppNameLoader implements Runnable {
-		private PackageInfo package_info;
+		private final PackageInfo package_info;
 
 		public AppNameLoader(PackageInfo info) {
 			package_info = info;
@@ -78,8 +78,8 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 	}
 
 	class GuiLoader implements Runnable {
-		private ViewHolder  viewHolder;
-		private PackageInfo package_info;
+		private final ViewHolder  viewHolder;
+		private final PackageInfo package_info;
 
 		public GuiLoader(ViewHolder h, PackageInfo info) {
 			viewHolder = h;
@@ -120,9 +120,9 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 	}
 
 	static class ViewHolder extends RecyclerView.ViewHolder implements OnClickListener {
-		private ApkListAdapter adapter;
-		private TextView       txtPackageName;
-		private TextView       txtAppName;
+		private final ApkListAdapter adapter;
+		private final TextView       txtPackageName;
+		private final TextView       txtAppName;
 		public  ImageView      imgIcon;
 
 		public ViewHolder(View v, ApkListAdapter adapter) {
