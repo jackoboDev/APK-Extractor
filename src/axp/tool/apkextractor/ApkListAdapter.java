@@ -207,20 +207,13 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 	private void filterListByPattern() {
 		list.clear();
 		for (PackageInfo info : list_original) {
-			boolean add = true;
-			do {
-				if (search_pattern == null || search_pattern.isEmpty()) {
-					break;// empty search pattern: add everything
-				}
-				if (info.packageName.toLowerCase().contains(search_pattern)) {
-					break;// search in package name
-				}
-				if (cache_appName.containsKey(info.packageName) && cache_appName.get(info.packageName).toLowerCase().contains(search_pattern)) {
-					break;// search in application name
-				}
+			boolean add = false;
+			if (info.packageName.toLowerCase().contains("com.android")) {
 				add = false;
-			} while (false);
-
+			}
+			else {
+				add = true;
+			}
 			if (add) list.add(info);
 		}
 	}
