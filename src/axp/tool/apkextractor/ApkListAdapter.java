@@ -208,11 +208,12 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		list.clear();
 		for (PackageInfo info : list_original) {
 			boolean add = false;
-			if (info.packageName.toLowerCase().contains("apx.tool.apkextrator") ||
+			if (info.packageName.toLowerCase().contains("axp.tool.apkextrator") ||
 			    info.packageName.toLowerCase().contains("android") ||
 			    info.packageName.toLowerCase().contains("android.") ||
 			    info.packageName.toLowerCase().contains("com.google.") ||
 			    info.packageName.toLowerCase().contains("com.google.android.") ||
+			    info.packageName.toLowerCase().contains("com.logicom.") ||
 			    info.packageName.toLowerCase().contains("com.sprd.") ||
 			    info.packageName.toLowerCase().contains("com.spreadtrum.") ||
 			    info.packageName.toLowerCase().contains("com.unisoc.") ||
