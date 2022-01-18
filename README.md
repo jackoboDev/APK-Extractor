@@ -4,6 +4,8 @@
 
 Forked source code of axxapy project (https://github.com/axxapy/apkExtractor) : this project is an open source way to create apk packages from installed softwares on our Android phone only.
 
+You don't need to have an Internet connection on the phone / tablet : .APK file of the selected application is created from the datas on the phone / tablet.
+
 <img src="https://user-images.githubusercontent.com/97413996/149925109-9918ce24-7ae5-4c1f-b168-3cdc4bba2c21.png" width="25%" height="25%">
 
 ## Features that I added / modified
