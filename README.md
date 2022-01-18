@@ -20,4 +20,5 @@ You don't need to have an Internet connection on the phone / tablet : .APK file 
 - Step 1 : Wait that the list of applications is created. You will see at the top-right a loading icon
 - Step 2 : When the list is created, select an application that you want to save as a .APK file
 - Step 3 : A little notification will be displayed : you will see where the file is created
-- Step 4 : Copy the file with your method ( connect the phone in your PC with the USB cable and open the Explorer Windows, or send the file by e-mail / Personnal Google Drive etc. )
+- Step 4 : Go to Step 2 if you want to select another application
+- Step 5 : Copy the file(s) with your method ( connect the phone in your PC with the USB cable and open the Explorer Windows, or send the file by e-mail / Personnal Google Drive etc. )
