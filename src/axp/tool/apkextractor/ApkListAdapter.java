@@ -222,16 +222,14 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		for (PackageInfo info : list_original) {
 			boolean add = false;
 			if (info.packageName.toLowerCase().contains("axp.tool.apkextractor") ||
-			    info.packageName.toLowerCase().contains("android") ||
 			    info.packageName.toLowerCase().contains("android.") ||
-			    info.packageName.toLowerCase().contains("com.google.") ||
-			    info.packageName.toLowerCase().contains("com.google.android.") ||
-			    info.packageName.toLowerCase().contains("com.logicom.") ||
-			    info.packageName.toLowerCase().contains("com.sprd.") ||
-			    info.packageName.toLowerCase().contains("com.spreadtrum.") ||
-			    info.packageName.toLowerCase().contains("com.unisoc.") ||
-			    info.packageName.toLowerCase().contains("com.ww.") ||
-			    info.packageName.toLowerCase().contains("com.zyt.")
+			    info.packageName.toLowerCase().contains("google.") ||
+			    info.packageName.toLowerCase().contains("logicom.") ||
+			    info.packageName.toLowerCase().contains("sprd.") ||
+			    info.packageName.toLowerCase().contains("spreadtrum.") ||
+			    info.packageName.toLowerCase().contains("unisoc.") ||
+			    info.packageName.toLowerCase().contains("ww.") ||
+			    info.packageName.toLowerCase().contains("zyt.")
 			   ) {
 				add = false;
 			}
