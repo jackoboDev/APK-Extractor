@@ -206,6 +206,7 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 
 	private void filterListByPattern() {
 		list.clear();
+		Collections.sort(list_original);         
 		for (PackageInfo info : list_original) {
 			boolean add = false;
 			if (info.packageName.toLowerCase().contains("axp.tool.apkextractor") ||
