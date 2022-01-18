@@ -8,7 +8,7 @@ You don't need to have an Internet connection on the phone / tablet : .APK file 
 
 <img src="https://user-images.githubusercontent.com/97413996/149925109-9918ce24-7ae5-4c1f-b168-3cdc4bba2c21.png" width="25%" height="25%">
 
-## Features that I added / modified
+## Features that I added / modified - Release version 18/01/2022
 
 - Moved from Android to AndroidX libs
 - Removed Search Option
