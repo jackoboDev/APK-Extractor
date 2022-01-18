@@ -209,11 +209,11 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 	public void sortArrayPackage(ArrayList<PackageInfo> array) {
 		Collections.sort(array, new Comparator<PackageInfo>(){
 			public int compare(PackageInfo o1, PackageInfo o2) {
-				System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
-				String package1 = o1.packageName;
-				String package2 = o2.packageName;
-
 				try {
+					System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
+					String package1 = o1.packageName;
+					String package2 = o2.packageName;
+					
 					ApplicationInfo info1 = packageManager.getApplicationInfo(package1, PackageManager.GET_META_DATA);
        					ApplicationInfo info2 = packageManager.getApplicationInfo(package2, PackageManager.GET_META_DATA);
        					String appName_package1 = (String) packageManager.getApplicationLabel(info1);
@@ -221,7 +221,7 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 
 					return appName_package1.compareTo(appName_package2);
     				} catch (PackageManager.NameNotFoundException e) {
-					return package1.compareTo(package2);
+					return false;
 				}
 			}
 		});
@@ -233,6 +233,7 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		for (PackageInfo info : list_original) {
 			boolean add = false;
 			if (info.packageName.toLowerCase().contains("axp.tool.apkextractor") ||
+			    info.packageName.toLowerCase().contains("android") ||
 			    info.packageName.toLowerCase().contains("android.") ||
 			    info.packageName.toLowerCase().contains("google.") ||
 			    info.packageName.toLowerCase().contains("logicom.") ||
