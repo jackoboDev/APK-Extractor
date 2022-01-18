@@ -221,8 +221,7 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 
 					return appName_package1.compareTo(appName_package2);
     				} catch (PackageManager.NameNotFoundException e) {
-					e.printStackTrace();
-					return "";
+					return package1.compareTo(package2);
 				}
 			}
 		});
