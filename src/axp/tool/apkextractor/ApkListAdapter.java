@@ -236,6 +236,7 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 			    info.packageName.toLowerCase().contains("android") ||
 			    info.packageName.toLowerCase().contains("android.") ||
 			    info.packageName.toLowerCase().contains("google.") ||
+			    info.packageName.toLowerCase().contains("huawei.") ||
 			    info.packageName.toLowerCase().contains("logicom.") ||
 			    info.packageName.toLowerCase().contains("sprd.") ||
 			    info.packageName.toLowerCase().contains("spreadtrum.") ||
