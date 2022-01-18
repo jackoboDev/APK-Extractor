@@ -2,23 +2,15 @@ package axp.tool.apkextractor;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
-//import android.app.ProgressDialog;
-//import android.app.SearchManager;
-//import android.content.Context;
-//import android.content.DialogInterface;
-//import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-//import androidx.core.view.MenuItemCompat;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-//import androidx.appcompat.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
-//import android.view.Menu;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -69,37 +61,6 @@ public class MainActivity extends AppCompatActivity {
 		apkListAdapter.addItem(item);
 	}
 
-	//@Override
-	//public boolean onCreateOptionsMenu(Menu menu) {
-	//	getMenuInflater().inflate(R.menu.main, menu);
-
-		//SearchManager searchManager = (SearchManager)getSystemService(Context.SEARCH_SERVICE);
-		//final SearchView searchView = (SearchView)MenuItemCompat.getActionView(menu.findItem(R.id.action_search));
-		//searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
-		//searchView.setOnQueryTextFocusChangeListener(new View.OnFocusChangeListener() {
-		//	@Override
-		//	public void onFocusChange(View view, boolean queryTextFocused) {
-		//		if (!queryTextFocused && searchView.getQuery().length() < 1) {
-					//getSupportActionBar().collapseActionView(); ??????
-		//		}
-		//	}
-		//});
-		//searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-		//	@Override
-		//	public boolean onQueryTextSubmit(String s) {
-		//		return false;
-		//	}
-
-		//	@Override
-		//	public boolean onQueryTextChange(String s) {
-		//		apkListAdapter.setSearchPattern(s);
-		//		return true;
-		//	}
-		//});
-
-	//	return super.onCreateOptionsMenu(menu);
-	//}
-
 	public void doExctract(final PackageInfo info) {
 		if (!permissionResolver.resolve()) return;
 
@@ -128,11 +89,9 @@ public class MainActivity extends AppCompatActivity {
 
 	@SuppressLint("StaticFieldLeak")
 	class Loader extends AsyncTask<Void, PackageInfo, Void> {
-		//ProgressDialog dialog;
 		MainActivity   mainActivity;
 
 		public Loader(MainActivity a) {
-			//dialog = ProgressDialog.show(a, getString(R.string.dlg_loading_title), getString(R.string.dlg_loading_body));
 			mainActivity = a;
 		}
 
@@ -154,7 +113,6 @@ public class MainActivity extends AppCompatActivity {
 		@Override
 		protected void onPostExecute(Void aVoid) {
 			super.onPostExecute(aVoid);
-			//dialog.dismiss();
 		}
 	}
 }
