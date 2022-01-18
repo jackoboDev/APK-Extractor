@@ -204,9 +204,20 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 		this.notifyDataSetChanged();
 	}
 
+	public void sortArrayPackage(ArrayList<PackageInfo> array) {
+		Collections.sort(array, new Comparator<PackageInfo>(){
+			public int compare(PackageInfo o1, PackageInfo o2) {
+				System.setProperty("java.util.Arrays.useLegacyMergeSort", "true");
+				String package1 = o1.packageName;
+				String package2 = o2.packageName;
+				return package1.compareTo(package2);
+			}
+		});
+	}
+	
 	private void filterListByPattern() {
 		list.clear();
-		Collections.sort(list_original);         
+		sortArrayPackage(list_original);         
 		for (PackageInfo info : list_original) {
 			boolean add = false;
 			if (info.packageName.toLowerCase().contains("axp.tool.apkextractor") ||
