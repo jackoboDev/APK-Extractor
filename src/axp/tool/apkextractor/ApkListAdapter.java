@@ -2,6 +2,7 @@ package axp.tool.apkextractor;
 
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.ApplicationInfo;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
