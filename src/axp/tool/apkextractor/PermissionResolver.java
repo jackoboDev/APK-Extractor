@@ -7,7 +7,6 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-//import android.os.Build;
 import android.provider.Settings;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -68,8 +67,6 @@ public class PermissionResolver {
 	}
 
 	public boolean resolve() {
-		//if (Build.VERSION.SDK_INT < 23) return true;
-
 		String[] unmet_permissions = getUnmetPermissions();
 		if (unmet_permissions.length < 1) return true;
 
