@@ -212,7 +212,6 @@ public class ApkListAdapter extends RecyclerView.Adapter<ApkListAdapter.ViewHold
 				String package1 = o1.packageName;
 				String package2 = o2.packageName;
 				
-				PackageManager packageManager = mActivity.getPackageManager();
        				ApplicationInfo info1 = packageManager.getApplicationInfo(package1, PackageManager.GET_META_DATA);
        				ApplicationInfo info2 = packageManager.getApplicationInfo(package2, PackageManager.GET_META_DATA);
        				String appName_package1 = (String) packageManager.getApplicationLabel(info1);
